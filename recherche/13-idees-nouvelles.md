@@ -22,11 +22,37 @@
 - Abridge vérifie ses propres notes, pas celles des autres éditeurs.
 - Klaus, racheté par Zendesk, note la qualité des conversations. Il ne réconcilie pas la facture.
 
+## Mise à jour après approfondissement de l'idée 1 (2026-09-24) : idée 1 ÉCARTÉE
+
+L'approfondissement a trouvé trois acteurs que la vérification de nouveauté avait ratés. La fonction exacte est déjà couverte :
+
+- **Artificial Analysis, « Endpoint Accuracy Index ».**
+  - Il mesure, pour chaque endpoint serverless d'un modèle open-weight, la part de précision conservée par rapport à un déploiement de référence auto-hébergé : appels d'outils (BFCL-500), raisonnement (HLE-250) et contexte long (AA-LCR).
+  - Couverture : GLM-5.2, gpt-oss-120b, DeepSeek V4 Pro, et Kimi K3 à venir.
+  - Constat publié : certains endpoints gpt-oss-120b obtiennent 22 % sur BFCL contre 37 % pour la référence.
+  - Offre payante : Pro à 417 $ par siège et par mois, plus du benchmarking privé.
+  - Sources : [article](https://artificialanalysis.ai/articles/endpoint-accuracy-index), [annonce X](https://x.com/ArtificialAnlys/status/2084702191466725669), [tarifs](https://artificialanalysis.ai/pricing).
+- **OpenRouter « Auto Exacto »**, activé par défaut depuis le 10/03/2026.
+  - Un harnais de benchmarks tourne en continu contre chaque endpoint fournisseur : GPQA Diamond et Tau2-Bench.
+  - Les fournisseurs sont réévalués toutes les 5 minutes, et les requêtes avec outils sont routées vers les meilleurs.
+  - Sources : [doc](https://openrouter.ai/docs/guides/routing/auto-exacto), [blog](https://openrouter.ai/blog/announcements/auto-exacto/).
+- **Kimi Vendor Verifier** (04/2026).
+  - Il est publié avec des tableaux comparatifs par fournisseur.
+  - Les hébergeurs l'utilisent pour valider leur mise en ligne dès le premier jour : Baseten sur vLLM et SGLang.
+  - Sources : [Kimi](https://www.kimi.com/blog/kimi-vendor-verifier), [GitHub](https://github.com/MoonshotAI/Kimi-Vendor-Verifier).
+- **La vérification cryptographique ou statistique existe aussi en open source :**
+  - [TOPLOC](https://github.com/PrimeIntellect-ai/toploc) (Prime Intellect) détecte un changement de modèle, de prompt ou de précision, et reste robuste d'un type de GPU à l'autre ;
+  - [LOGIC](https://inference.net/blog/logic/) (Inference.net) compare des distributions de logprobs.
+
+Ce qui reste : une bissection couche par couche pour localiser une divergence lors d'une migration de puce. C'est un outil de débogage, déjà documenté par AMD ([guide logprobs](https://rocm.blogs.amd.com/software-tools-optimization/logprob-debug/README.html)) : une fonction, pas un produit.
+
+**Conséquence sur la méthode.** Cette idée avait passé la vérification de nouveauté (au moins 3 recherches) et une contre-vérification personnelle, puis elle est tombée à l'approfondissement. Les idées 2 à 8 doivent passer le même approfondissement avant d'être considérées comme nouvelles.
+
 ## Classement (par urgence d'achat)
 
 | # | Idée | Nouveauté | Déclencheur daté | Preuve que l'argent circule déjà | Risque principal |
 |---|---|---|---|---|---|
-| 1 | Vérification neutre de la fidélité numérique des fournisseurs d'inférence et des migrations de puce | Aucun vendeur | Accord AMD–Anthropic de 2 GW (22/07/2026) ; audit CISPA (03/2026) | Moonshot et MiniMax ont chacun construit leur propre vérificateur | OpenRouter ou ThousandEyes l'étendent |
+| ~~1~~ | ~~Vérification neutre de la fidélité numérique des fournisseurs d'inférence~~ **ÉCARTÉE, voir la mise à jour** | Artificial Analysis, OpenRouter, Kimi | Accord AMD–Anthropic de 2 GW (22/07/2026) ; audit CISPA (03/2026) | Moonshot et MiniMax ont chacun construit leur propre vérificateur | OpenRouter ou ThousandEyes l'étendent |
 | 2 | Audit indépendant des « résolutions » facturées par les agents support IA | Aucun vendeur | Surfacturation auto Zendesk (01/2026) ; passage de Fin aux « outcomes » | L'audit de factures IA au succès se vend déjà (Vaudit TokenAudit) | Zendesk ne facture plus que des résolutions vérifiées ; Vaudit peut s'étendre |
 | 3 | Poste de travail IA pour vérificateurs CBAM accrédités | Aucun vendeur trouvé côté vérificateur | Guide CE (24/08/2026) ; accréditations (09/2026) ; vérifications dès 01/2027 | Les vérificateurs facturent la vérification ; la pré-vérification est vendue (SGS, RINA) | Peu de recherches (4) ; peu d'acheteurs |
 | 4 | Contrôle qualité neutre des notes des scribes IA, tous éditeurs | Aucun vendeur multi-éditeurs | Vérificateur général de l'Ontario (05/2026) | DAX : 600+ organisations clientes | Accès aux transcriptions contrôlé par les éditeurs ; achats hospitaliers lents |
@@ -48,7 +74,7 @@ Détails en fin de fichier.
 
 ## Fiches
 
-### 1. Vérification neutre de la fidélité numérique des fournisseurs d'inférence
+### 1. Vérification neutre de la fidélité numérique des fournisseurs d'inférence (ÉCARTÉE, voir la mise à jour en tête de fichier)
 
 - **Question technique d'origine.** Quand le même modèle open-weight est servi sur une autre puce (AMD, TPU, Trainium), une autre version de vLLM ou SGLang, ou chez un autre fournisseur, qu'est-ce qui garantit qu'il calcule la même chose ? Et qui s'en aperçoit ?
 - **Problème.**
