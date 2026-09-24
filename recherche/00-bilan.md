@@ -36,3 +36,20 @@ Là où le manque technique (b) et le déclencheur (c) sont réels mais la fonct
 - Presque toutes les preuves viennent d'extraits de résultats de recherche. Le proxy bloquait la plupart des pages sources.
 - La première passe avait raté des acteurs (par exemple Vaudit) et contenait 7 preuves (d) fausses sur les 60 revérifiées. La revérification n'a changé aucun verdict, mais la fiabilité d'une preuve isolée reste moyenne.
 - La règle « au moindre doute, échec » élimine aussi les candidats dont le seul défaut est un doute, pas une preuve contraire.
+
+## Réévaluation avec le critère (d) tel que formulé (acteurs en place uniquement)
+
+Les protocoles des agents ajoutaient « ou une autre startup » au critère (d). Ce durcissement ne figure pas dans le critère d'origine. Les 332 verdicts ont été repris avec la formulation d'origine : une startup concurrente non dominante n'élimine plus un candidat.
+
+Filtre appliqué : (a), (c) et (b) réussis, et (d) en échec uniquement à cause d'une startup non dominante. Aucun candidat ne passe ce filtre.
+
+**Candidats qui réussissent (a).** Ils sont 29. Tous échouent aussi sur (b) ou (d) pour l'une de ces raisons :
+- un acteur en place fait déjà la fonction (NVIDIA, Microsoft, Epic, Okta, AWS, DoubleVerify, Temporal) ;
+- un leader dominant la couvre (Modal, Pindrop, Horizon3, BioCatch, Profound, Exa/Parallel) ;
+- la niche a été rachetée (Run:ai, Quantifi, Celestial, Koi, Seraphic, Iodine, Permiso, Tavily, Human Native, Gretel, Protect AI, Portkey, Metronome) ;
+- il n'y a pas de manque technique (post-Stainless, cabinet comptable, BPO vocal, marketplace d'experts, clones d'applications pour le RL).
+
+**Candidats éliminés sur (d) seulement par une startup non dominante.** Ils échouent tous déjà sur (a). Exemples :
+- conformité réseau des datacenters (GridStrong) : aucun ARR, l'argent va au matériel et au conseil ;
+- audit des factures IA (Vaudit) : environ 0,75 M$ sur l'échantillon ;
+- délégation multi-hop entre agents (Keycard).
