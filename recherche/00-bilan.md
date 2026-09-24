@@ -43,7 +43,7 @@ Les protocoles des agents ajoutaient « ou une autre startup » au critère (d).
 
 Filtre appliqué : (a), (c) et (b) réussis, et (d) en échec uniquement à cause d'une startup non dominante. Aucun candidat ne passe ce filtre.
 
-**Candidats qui réussissent (a).** Ils sont 29. Tous échouent aussi sur (b) ou (d) pour l'une de ces raisons :
+**Candidats qui réussissent (a).** Ils sont une quarantaine (23 dans les fichiers 04 à 07, environ 17 dans les rapports des couches 01 à 03). Tous échouent aussi sur (b) ou (d) pour l'une de ces raisons :
 - un acteur en place fait déjà la fonction (NVIDIA, Microsoft, Epic, Okta, AWS, DoubleVerify, Temporal) ;
 - un leader dominant la couvre (Modal, Pindrop, Horizon3, BioCatch, Profound, Exa/Parallel) ;
 - la niche a été rachetée (Run:ai, Quantifi, Celestial, Koi, Seraphic, Iodine, Permiso, Tavily, Human Native, Gretel, Protect AI, Portkey, Metronome) ;
