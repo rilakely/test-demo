@@ -27,7 +27,7 @@ Limite : les preuves viennent surtout des extraits de résultats de recherche, a
 | Passerelle LLM multi-fournisseurs | b, d | Portkey → Palo Alto, OpenRouter → Stripe (>7 Md$), LiteLLM |
 | Routeur appris qualité/coût | a, b, d | OpenRouter, Not Diamond, Martian |
 | Vérification de fidélité des endpoints | a, d | OpenRouter Auto Exacto, Artificial Analysis |
-| Audit des tokens cachés facturés | a, d | Aucune demande prouvée ; TEE / comptabilité côté fournisseur |
+| Audit des tokens cachés facturés | a, b, d | Vaudit TokenAudit existe déjà (60 entreprises, 34 M$ de factures auditées, 1,7 M$ de surfacturation, 03-06/2026) ; revenu du segment faible (~0,75 M$ sur l'échantillon) ; un audit tiers fiable des tokens cachés exige TEE ou preuve cryptographique contrôlée par le fournisseur (arXiv 2605.30040) ; fraude prouvée surtout chez les relais/revendeurs, déjà couverts par des sondes (BazaarLink Probe, llm-fingerprint-detector) |
 | Snapshot GPU pour cold start | a, b, d | NVIDIA Dynamo Snapshot, Modal |
 | Isolation du GPU fractionnaire | b, c, d | NVIDIA KAI + HAMi |
 | Autoscaler piloté par SLO | a, b, c, d | Dynamo SLA Planner |
