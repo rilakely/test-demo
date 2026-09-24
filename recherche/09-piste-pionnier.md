@@ -5,7 +5,7 @@ Critères :
 - **P2.** Un acheteur précis a le problème et paie déjà pour des choses voisines.
 - **P3.** Un premier produit peut être construit en 4 à 8 semaines et vendu sans levée de fonds.
 
-**Résultat : 4 pistes retenues sur 12, toutes avec réserves. Aucune n'a de preuve directe d'achat : c'est ce qu'il faut valider en premier.**
+**Résultat : 2 pistes retenues (1 et 2), avec réserves. Les pistes 3 et 4 ont été écartées après revue : pas de preuve de paiement pour la 3, demande suspendue à une règle non finalisée pour la 4. Aucune piste retenue n'a encore de preuve directe d'achat.**
 
 ## Pistes retenues (classées)
 
