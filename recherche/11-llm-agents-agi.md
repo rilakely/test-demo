@@ -4,7 +4,7 @@
 
 ## Partie 1 — LLMs
 
-**Bilan : une idée retenue, faible (MARCHÉ À VALIDER). Sept pistes rejetées avec preuve.**
+**Bilan : une idée retenue, faible (MARCHÉ À VALIDER). Huit pistes rejetées avec preuve.**
 
 ### Fiche 1 — Conformité « Article 50 » clé en main pour qui fine-tune ou héberge soi-même un modèle open-weight (MARCHÉ À VALIDER)
 
